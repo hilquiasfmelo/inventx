@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+import { CreateUserUseCase } from './CreateUserUseCase';
 
 class CreateUserController {
   async hanlde(request: Request, response: Response): Promise<Response> {
@@ -15,8 +15,8 @@ class CreateUserController {
       password,
     });
 
-    return response.status(201).json(user)
+    return response.status(201).json(user);
   }
 }
 
-export { CreateUserController }
+export { CreateUserController };

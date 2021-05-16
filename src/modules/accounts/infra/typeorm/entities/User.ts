@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
 @Entity('users')
@@ -18,7 +24,7 @@ class User {
   @Column()
   password: string;
 
-  @Column('boolean')
+  @Column()
   isAdmin: boolean;
 
   @CreateDateColumn()
@@ -34,4 +40,4 @@ class User {
   }
 }
 
-export { User }
+export { User };
