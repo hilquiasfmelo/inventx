@@ -1,7 +1,7 @@
 import { getRepository, Repository } from 'typeorm';
-import { User } from '../../entities/User';
-import { IUsersRepository } from '../IUsersRepository';
-import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
+import { IUsersRepository } from '@modules/accounts/infra/interfaces/IUsersRepository';
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
 
 class UsersRepository implements IUsersRepository {
   private usersRepository: Repository<User>;
@@ -46,6 +46,14 @@ class UsersRepository implements IUsersRepository {
     const user = await this.usersRepository.findOne({ email });
 
     return user;
+  }
+
+  async save(user: User): Promise<User> {
+    return this.usersRepository.save(user);
+  }
+
+  async deleteById(id: string): Promise<void> {
+    await this.usersRepository.delete(id);
   }
 }
 

@@ -6,14 +6,17 @@
   "author": "hilquiasfmelo <hilquiasfmelo@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/app/server.ts",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli"
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/app/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "seed:admin": "ts-node-dev src/shared/infra/typeorm/seeds/admin.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.5.0",
     "typeorm": "^0.2.32",
     "uuid": "^8.3.2"
@@ -21,7 +24,8 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.11",
-    "@types/uuid": "^8.3.0",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",

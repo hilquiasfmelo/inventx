@@ -36,6 +36,7 @@ class User {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
+      this.isAdmin = false;
     }
   }
 }
