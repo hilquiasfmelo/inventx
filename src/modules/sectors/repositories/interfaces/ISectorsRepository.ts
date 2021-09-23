@@ -9,6 +9,10 @@ interface ISectorsRepository {
   findById(id: string): Promise<Sector>;
 
   findByName(name: string): Promise<Sector>;
+
+  save(sector: Sector): Promise<Sector>;
+
+  delete(id: string): Promise<void>;
 }
 
 export { ISectorsRepository };

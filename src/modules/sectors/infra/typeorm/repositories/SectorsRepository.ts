@@ -39,6 +39,14 @@ class SectorsRepository implements ISectorsRepository {
 
     return sector;
   }
+
+  async save(sector: Sector): Promise<Sector> {
+    return this.sectorsRepository.save(sector);
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.sectorsRepository.delete(id);
+  }
 }
 
 export { SectorsRepository };
