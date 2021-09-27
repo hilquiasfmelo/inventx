@@ -48,6 +48,12 @@ class UsersRepository implements IUsersRepository {
     return user;
   }
 
+  async findByUsername(username: string): Promise<User> {
+    const user = await this.usersRepository.findOne({ username });
+
+    return user;
+  }
+
   async save(user: User): Promise<User> {
     return this.usersRepository.save(user);
   }

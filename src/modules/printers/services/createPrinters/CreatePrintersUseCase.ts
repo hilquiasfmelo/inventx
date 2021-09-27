@@ -4,7 +4,7 @@ import { IPrinterDTO } from '@modules/printers/dtos/IPrinterDTO';
 import { IPrintersRepository } from '@modules/printers/infra/interfaces/IPrintersRepository';
 import { Printer } from '@modules/printers/infra/typeorm/entities/Printer';
 import { AppError } from '@shared/errors/AppError';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 
 @injectable()
 class CreatePrintersUseCase {

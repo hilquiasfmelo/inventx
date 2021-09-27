@@ -1,9 +1,9 @@
 import { inject, injectable } from 'tsyringe';
 
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
 import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
 import { ICreateSectorDTO } from '@modules/sectors/dtos/ICreateSectorDTO';
 import { AppError } from '@shared/errors/AppError';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 
 @injectable()
 class UpdateSectorUseCase {

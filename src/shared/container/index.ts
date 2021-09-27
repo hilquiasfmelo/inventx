@@ -8,8 +8,8 @@ import { IPrintersRepository } from '@modules/printers/infra/interfaces/IPrinter
 import { PrintersRepository } from '@modules/printers/infra/typeorm/repositories/implementations/PrintersRepository';
 import { IComputersRepository } from '@modules/computers/infra/interfaces/IComputersRepository';
 import { ComputersRepository } from '@modules/computers/infra/typeorm/repositories/implementations/ComputersRepository';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
-import { SectorsRepository } from '@modules/sectors/infra/typeorm/repositories/SectorsRepository';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
+import { SectorsRepository } from '@modules/sectors/infra/typeorm/repositories/implementations/SectorsRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',

@@ -4,7 +4,7 @@ import { IComputerDTO } from '@modules/computers/dtos/IComputerDTO';
 import { IComputersRepository } from '@modules/computers/infra/interfaces/IComputersRepository';
 import { Computer } from '@modules/computers/infra/typeorm/entities/Computer';
 import { AppError } from '@shared/errors/AppError';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 
 @injectable()
 class CreateComputersUseCase {

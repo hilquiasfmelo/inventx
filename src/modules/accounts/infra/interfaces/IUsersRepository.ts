@@ -16,6 +16,8 @@ interface IUsersRepository {
 
   findByEmail(email: string): Promise<User>;
 
+  findByUsername(username: string): Promise<User>;
+
   save(user: User): Promise<User>;
 
   deleteById(id: string): Promise<void>;

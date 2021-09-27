@@ -9,7 +9,8 @@ import {
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
-import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
+import { Sector } from '../../../../sectors/infra/typeorm/entities/Sector';
+// import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
 
 @Entity('computers')
 class Computer {

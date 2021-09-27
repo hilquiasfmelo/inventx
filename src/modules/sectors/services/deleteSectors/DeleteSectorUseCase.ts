@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
 import { AppError } from '@shared/errors/AppError';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 
 @injectable()
 class DeleteSectorUseCase {

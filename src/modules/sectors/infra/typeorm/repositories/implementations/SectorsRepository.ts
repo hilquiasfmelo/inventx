@@ -1,9 +1,8 @@
 import { getRepository, Repository } from 'typeorm';
 
 import { ICreateSectorDTO } from '@modules/sectors/dtos/ICreateSectorDTO';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
-
-import { Sector } from '../entities/Sector';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
+import { Sector } from '../../entities/Sector';
 
 class SectorsRepository implements ISectorsRepository {
   private sectorsRepository: Repository<Sector>;

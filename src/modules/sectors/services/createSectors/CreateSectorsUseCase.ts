@@ -1,6 +1,6 @@
 import { ICreateSectorDTO } from '@modules/sectors/dtos/ICreateSectorDTO';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
 import { AppError } from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 

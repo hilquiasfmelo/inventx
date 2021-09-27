@@ -1,5 +1,5 @@
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()

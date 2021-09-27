@@ -1,4 +1,3 @@
-import { Sector } from '@modules/sectors/infra/typeorm/entities/Sector';
 import {
   Column,
   CreateDateColumn,
@@ -9,6 +8,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+
+import { Sector } from '../../../../sectors/infra/typeorm/entities/Sector';
 
 @Entity('printers')
 class Printer {

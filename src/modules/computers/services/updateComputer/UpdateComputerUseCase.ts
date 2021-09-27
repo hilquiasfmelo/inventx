@@ -3,7 +3,7 @@ import { IComputersRepository } from '@modules/computers/infra/interfaces/ICompu
 import { Computer } from '@modules/computers/infra/typeorm/entities/Computer';
 import { AppError } from '@shared/errors/AppError';
 import { IComputerDTO } from '@modules/computers/dtos/IComputerDTO';
-import { ISectorsRepository } from '@modules/sectors/repositories/interfaces/ISectorsRepository';
+import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 
 @injectable()
 class UpdateComputerUseCase {
