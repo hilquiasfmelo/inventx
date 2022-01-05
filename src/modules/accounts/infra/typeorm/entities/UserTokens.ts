@@ -5,29 +5,18 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Exclude } from 'class-transformer';
 import { v4 as uuidV4 } from 'uuid';
 
-@Entity('users')
-class User {
+@Entity('user_tokens')
+class UserTokens {
   @PrimaryColumn()
   id?: string;
 
   @Column()
-  name: string;
+  token: string;
 
   @Column()
-  username: string;
-
-  @Column()
-  email: string;
-
-  @Column()
-  @Exclude()
-  password: string;
-
-  @Column()
-  isAdmin: boolean;
+  user_id: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -36,11 +25,11 @@ class User {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) {
+    if (!this.id || !this.token) {
       this.id = uuidV4();
-      this.isAdmin = false;
+      this.token = uuidV4();
     }
   }
 }
 
-export { User };
+export { UserTokens };

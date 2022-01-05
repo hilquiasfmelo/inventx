@@ -10,10 +10,17 @@ import { IComputersRepository } from '@modules/computers/infra/interfaces/ICompu
 import { ComputersRepository } from '@modules/computers/infra/typeorm/repositories/implementations/ComputersRepository';
 import { ISectorsRepository } from '@modules/sectors/infra/interfaces/ISectorsRepository';
 import { SectorsRepository } from '@modules/sectors/infra/typeorm/repositories/implementations/SectorsRepository';
+import { IUserTokensRepository } from '@modules/accounts/infra/interfaces/IUserTokensRepository';
+import { UserTokensRepository } from '@modules/accounts/infra/typeorm/repositories/implementations/UserTokensRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
+);
+
+container.registerSingleton<IUserTokensRepository>(
+  'UserTokensRepository',
+  UserTokensRepository,
 );
 
 container.registerSingleton<IPrintersRepository>(

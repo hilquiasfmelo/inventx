@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { instanceToInstance } from 'class-transformer';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
 class CreateUserController {
@@ -15,7 +16,7 @@ class CreateUserController {
       password,
     });
 
-    return response.status(201).json(user);
+    return response.status(201).json(instanceToInstance(user));
   }
 }
 
