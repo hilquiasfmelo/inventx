@@ -7,7 +7,7 @@ import { AppError } from '@shared/errors/AppError';
 import { sign } from 'jsonwebtoken';
 
 interface IRequest {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -15,7 +15,9 @@ interface IResponse {
   user: {
     id: string;
     name: string;
+    username: string;
     email: string;
+    isAdmin: boolean;
   };
   token: string;
 }
@@ -30,11 +32,10 @@ class AuthenticateUserUseCase {
     private hashProvider: IHashProvider,
   ) {}
 
-  async execute({ email, password }: IRequest): Promise<IResponse> {
-    const user = await this.usersRepository.findByEmail(email);
-
+  async execute({ username, password }: IRequest): Promise<IResponse> {
+    const user = await this.usersRepository.findByUsername(username);
     if (!user) {
-      throw new AppError('Email or password incorrect');
+      throw new AppError('Username or password incorrect', 401);
     }
 
     const passwordMatch = await this.hashProvider.compareHash(
@@ -43,7 +44,7 @@ class AuthenticateUserUseCase {
     );
 
     if (!passwordMatch) {
-      throw new AppError('Email or password incorrect');
+      throw new AppError('Username or password incorrect', 401);
     }
 
     const token = sign({}, '4ca3c809d8aba8eda280c11654004c84', {
@@ -55,7 +56,9 @@ class AuthenticateUserUseCase {
       user: {
         id: user.id,
         name: user.name,
+        username: user.username,
         email: user.email,
+        isAdmin: user.isAdmin,
       },
       token,
     };

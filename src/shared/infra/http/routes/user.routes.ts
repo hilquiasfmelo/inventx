@@ -18,7 +18,6 @@ const deleteUserController = new DeleteUserController();
 const authenticateUserController = new AuthenticateUserController();
 
 usersRoutes.post('/sessions', authenticateUserController.handle);
-
 usersRoutes.post('/', createUserController.hanlde);
 
 usersRoutes.use(ensureAuthenticate, ensureIsAdmin);

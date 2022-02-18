@@ -1,6 +1,7 @@
-import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/implementations/UsersRepository';
-import { AppError } from '@shared/errors/AppError';
 import { NextFunction, Request, Response } from 'express';
+import { AppError } from '@shared/errors/AppError';
+
+import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/implementations/UsersRepository';
 
 async function ensureIsAdmin(
   request: Request,
